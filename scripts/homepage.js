@@ -145,19 +145,31 @@ class HomepageManager {
      * Anime un nombre de 0 à sa valeur finale
      */
     animateNumber(element) {
-        const target = parseInt(element.getAttribute('data-count'));
-        const duration = 2000; // 2 secondes
-        const step = Math.floor(target / (duration / 16)); // 60fps
+        const target = parseInt(element.getAttribute('data-count')) || 0;
+        if (target <= 0) {
+            element.textContent = '0';
+            return;
+        }
 
-        let current = 0;
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
+        // Animation via requestAnimationFrame pour garantir une variation visible
+        const duration = 1500; // durée en ms
+        const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+        const start = performance.now();
+
+        function tick(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutCubic(progress);
+            const value = Math.floor(eased * target);
+            element.textContent = value.toLocaleString();
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                element.textContent = target.toLocaleString();
             }
-            element.textContent = current.toLocaleString();
-        }, 16);
+        }
+
+        requestAnimationFrame(tick);
     }
 
     /**

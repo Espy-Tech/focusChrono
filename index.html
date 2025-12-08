@@ -306,7 +306,7 @@
                             <div class="stat-label">Utilisateurs</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-number" data-count="2000000">0</div>
+                            <div class="stat-number" data-count="2000">0</div>
                             <div class="stat-label">Minutes de focus</div>
                         </div>
                         <div class="stat-box">
@@ -406,6 +406,31 @@
                 event.target.style.display = 'none';
             }
         }
+    </script>
+    <script>
+        // Anime les compteurs de la page (valeur définie dans l'attribut data-count)
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'), 10) || 0;
+                const duration = 1400; // durée de l'animation en ms
+                const startTime = performance.now();
+
+                function step(now) {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const value = Math.floor(progress * target);
+                    counter.textContent = value;
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        counter.textContent = target; // assurer la valeur finale exacte
+                    }
+                }
+
+                requestAnimationFrame(step);
+            });
+        });
     </script>
 </body>
 
