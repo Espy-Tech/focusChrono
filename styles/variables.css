@@ -1,0 +1,197 @@
+/* 
+ * Fichier des variables CSS pour Focus Chronométré
+ * Ce fichier définit les couleurs, espacements et autres variables réutilisables
+ */
+
+:root {
+    /* ===== PALETTE DE COULEURS - THÈME SOMBRE (par défaut) ===== */
+
+    /* Couleurs principales */
+    --color-primary: #3b82f6;
+    /* Bleu - couleur d'accent principale */
+    --color-primary-dark: #2563eb;
+    /* Bleu foncé pour les états hover */
+    --color-primary-light: #60a5fa;
+    /* Bleu clair */
+
+    /* Arrière-plans */
+    --color-bg-primary: #0b0b0b;
+    /* Fond principal */
+    --color-bg-secondary: #242c7a;
+    /* Fond secondaire (panneaux, cartes) */
+    --color-bg-tertiary: #342323;
+    /* Fond tertiaire */
+
+    /* Textes */
+    --color-text-primary: #ced8e4;
+    /* Texte principal */
+    --color-text-secondary: #94a3b8;
+    /* Texte secondaire */
+    --color-text-tertiary: #64748b;
+    /* Texte tertiaire */
+
+    /* Bordures et séparateurs */
+    --color-border: #235294;
+    /* Bordures */
+    --color-border-light: #334155;
+    /* Bordures claires */
+
+    /* États et feedback */
+    --color-success: #10b981;
+    /* Vert - succès */
+    --color-warning: #f59e0b;
+    /* Orange - avertissement */
+    --color-error: #ef4444;
+    /* Rouge - erreur */
+
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-primary: 0 4px 12px rgba(59, 130, 246, 0.3);
+
+    /* ===== PALETTE DE COULEURS - THÈME CLAIR ===== */
+
+    .light-mode {
+        /* Arrière-plans */
+        --color-bg-primary: #f8fafc;
+        --color-bg-secondary: #ffffff;
+        --color-bg-tertiary: #f1f5f9;
+
+        /* Textes */
+        --color-text-primary: #334155;
+        --color-text-secondary: #64748b;
+        --color-text-tertiary: #94a3b8;
+
+        /* Bordures et séparateurs */
+        --color-border: #cbd5e1;
+        --color-border-light: #e2e8f0;
+
+        /* Ombres */
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+        --shadow-primary: 0 4px 12px rgba(59, 130, 246, 0.2);
+    }
+
+    /* ===== TYPOGRAPHIE ===== */
+
+    /* Familles de polices */
+    --font-family-primary: 'Inter',
+    'Segoe UI',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+    --font-family-mono: 'SF Mono',
+    Monaco,
+    'Cascadia Code',
+    monospace;
+
+    /* Tailles de police */
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-base: 1rem;
+    /* 16px */
+    --font-size-lg: 1.125rem;
+    /* 18px */
+    --font-size-xl: 1.25rem;
+    /* 20px */
+    --font-size-2xl: 1.5rem;
+    /* 24px */
+    --font-size-3xl: 1.875rem;
+    /* 30px */
+    --font-size-4xl: 2.25rem;
+    /* 36px */
+    --font-size-5xl: 3rem;
+    /* 48px */
+    --font-size-6xl: 3.75rem;
+    /* 60px */
+    --font-size-7xl: 5rem;
+    /* 80px */
+
+    /* Épaisseurs de police */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Hauteurs de ligne */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+
+    /* ===== ESPACEMENTS ET DIMENSIONS ===== */
+
+    /* Rayons de bordure */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-full: 9999px;
+
+    /* Espacements (scale 4px) */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-5: 1.25rem;
+    /* 20px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-10: 2.5rem;
+    /* 40px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+    --space-20: 5rem;
+    /* 80px */
+    --space-24: 6rem;
+    /* 96px */
+
+    /* ===== ANIMATIONS ET TRANSITIONS ===== */
+
+    /* Durées de transition */
+    --transition-fast: 150ms;
+    --transition-normal: 300ms;
+    --transition-slow: 500ms;
+
+    /* Fonctions de temporisation */
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+    /* ===== Z-INDEX ===== */
+
+    /* Niveaux de superposition */
+    --z-index-dropdown: 10;
+    --z-index-sticky: 20;
+    --z-index-fixed: 30;
+    --z-index-modal-backdrop: 40;
+    --z-index-modal: 50;
+    --z-index-popover: 60;
+    --z-index-tooltip: 70;
+
+    /* ===== DIMENSIONS SPÉCIFIQUES À L'APPLICATION ===== */
+
+    /* Chronomètre */
+    --timer-size: 400px;
+    --timer-size-mobile: 300px;
+    --progress-stroke-width: 8px;
+    --progress-circumference: 1130;
+    /* 2 * π * r (2 * 3.1416 * 180) */
+
+    /* Panneau des paramètres */
+    --settings-panel-width: 300px;
+    --settings-panel-width-mobile: 100%;
+}

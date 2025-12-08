@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Chronométré - Application de Productivité</title>
+
+    <!-- Feuilles de style -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Icônes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Polices Google Fonts (optionnel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Conteneur principal de l'application -->
+    <div class="app-container">
+
+        <!-- En-tête de l'application -->
+        <header class="app-header">
+            <a href="index.html" class="back-home" title="Retour à l'accueil">
+                 <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="app-title">
+                <i class="fas fa-hourglass-half"></i>
+                FOCUS CHRONOMÉTRÉ
+            </h1>
+
+            <!-- Bouton de basculement thème clair/sombre -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Section principale contenant le chronomètre -->
+        <main class="timer-section">
+
+            <!-- Conteneur du cercle de progression -->
+            <div class="timer-container">
+
+                <!-- SVG pour le cercle de progression animé -->
+                <svg class="progress-circle" viewBox="0 0 400 400" aria-labelledby="timerTitle">
+                    <title id="timerTitle">Cercle de progression du chronomètre</title>
+
+                    <!-- Cercle de fond (arrière-plan) -->
+                    <circle class="progress-background" cx="200" cy="200" r="180"></circle>
+
+                    <!-- Barre de progression animée -->
+                    <circle class="progress-bar" id="progressBar" cx="200" cy="200" r="180"></circle>
+                </svg>
+
+                <!-- Affichage numérique du temps -->
+                <div class="timer-display">
+                    <!-- Temps formaté (minutes:secondes) -->
+                    <div class="time" id="timeDisplay" aria-live="polite">25:00</div>
+
+                    <!-- Indicateur du mode actuel (Focus/Pause) -->
+                    <div class="mode-text" id="modeText">Focus</div>
+                </div>
+            </div>
+
+            <!-- Contrôles principaux du chronomètre -->
+            <div class="controls" role="group" aria-label="Contrôles du chronomètre">
+                <!-- Bouton Démarrer/Reprendre -->
+                <button class="btn btn-primary" id="startBtn" aria-label="Démarrer le chronomètre">
+                    <i class="fas fa-play"></i> Démarrer
+                </button>
+
+                <!-- Bouton Pause -->
+                <button class="btn btn-secondary" id="pauseBtn" disabled aria-label="Mettre en pause">
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+
+                <!-- Bouton Réinitialiser -->
+                <button class="btn btn-secondary" id="resetBtn" aria-label="Réinitialiser le chronomètre">
+                    <i class="fas fa-redo"></i> Réinitialiser
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Panneau des paramètres (caché par défaut) -->
+    <aside class="settings-panel" id="settingsPanel" aria-hidden="true" aria-label="Panneau des paramètres">
+        <div class="settings-header">
+            <h2 class="settings-title">
+                <i class="fas fa-cog"></i> Paramètres
+            </h2>
+
+            <!-- Bouton pour fermer le panneau -->
+            <button class="close-settings" id="closeSettings" aria-label="Fermer les paramètres">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Configuration des durées -->
+        <div class="setting-group">
+            <label class="setting-label">Durées des sessions (minutes)</label>
+
+            <div class="time-inputs">
+                <!-- Durée de focus -->
+                <div class="time-input">
+                    <label for="focusTime">Focus</label>
+                    <input type="number" id="focusTime" min="1" max="120" value="25"
+                        aria-label="Durée de la session de focus en minutes">
+                </div>
+
+                <!-- Durée de pause -->
+                <div class="time-input">
+                    <label for="breakTime">Pause</label>
+                    <input type="number" id="breakTime" min="1" max="30" value="5"
+                        aria-label="Durée de la pause en minutes">
+                </div>
+            </div>
+        </div>
+
+        <!-- Option de son -->
+        <div class="setting-group">
+            <div class="sound-toggle">
+                <span class="setting-label">Son de notification</span>
+
+                <!-- Interrupteur pour activer/désactiver le son -->
+                <label class="toggle-switch" aria-label="Activer/désactiver les notifications sonores">
+                    <input type="checkbox" id="soundToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Bouton pour sauvegarder les paramètres -->
+        <div class="setting-group">
+            <button class="btn btn-primary" id="saveSettings" aria-label="Enregistrer les paramètres">
+                <i class="fas fa-save"></i> Enregistrer les paramètres
+            </button>
+        </div>
+
+        <!-- Statistiques (optionnel) -->
+        <div class="setting-group">
+            <div class="stats">
+                <h3 class="stats-title">Statistiques de la journée</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value" id="focusSessions">0</span>
+                        <span class="stat-label">Sessions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="totalFocusTime">0</span>
+                        <span class="stat-label">Minutes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Navigation secondaire (boutons flottants) -->
+    <nav class="footer-nav" aria-label="Navigation secondaire">
+        <!-- Bouton Paramètres -->
+        <button class="nav-btn" id="settingsBtn" aria-label="Ouvrir les paramètres">
+            <i class="fas fa-cog"></i>
+            <span class="sr-only">Paramètres</span>
+        </button>
+
+        <!-- Bouton Informations -->
+        <button class="nav-btn" id="infoBtn" aria-label="Afficher les informations">
+            <i class="fas fa-info"></i>
+            <span class="sr-only">Informations</span>
+        </button>
+
+        <!-- Bouton Plein écran (optionnel) -->
+        <button class="nav-btn" id="fullscreenBtn" aria-label="Mode plein écran">
+            <i class="fas fa-expand"></i>
+            <span class="sr-only">Plein écran</span>
+        </button>
+    </nav>
+
+    <!-- Modal pour les notifications et informations -->
+    <div class="modal" id="modal" role="dialog" aria-modal="false" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <!-- Titre du modal -->
+            <h3 class="modal-title" id="modalTitle">Session Terminée</h3>
+
+            <!-- Message du modal -->
+            <p class="modal-message" id="modalMessage">
+                Votre session de focus est terminée. Il est temps de prendre une pause.
+            </p>
+
+            <!-- Actions du modal -->
+            <div class="modal-actions">
+                <!-- Bouton d'action principal -->
+                <button class="btn btn-primary" id="modalActionBtn">Commencer la pause</button>
+
+                <!-- Bouton pour fermer -->
+                <button class="btn btn-secondary" id="modalCloseBtn">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chargement des scripts JavaScript -->
+    <!-- Les scripts sont chargés à la fin pour améliorer les performances -->
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/settings.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
