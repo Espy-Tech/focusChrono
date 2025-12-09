@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZSTS627JB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-PZSTS627JB');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T2QTN79M');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Vérification Google Site -->
+    <meta name="google-site-verification" content="30lLvncsUDVfIYFrCyg51EWeUay9xOF6mDsXOMrAOis" />
+
+    <!-- Description -->
+    <title>Focus Chronométré - Améliorez votre productivité</title>
+
+    <!-- Feuilles de style -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/homepage.css">
+
+    <!-- Icônes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏱️</text></svg>">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PZSTS627JB"></script>
+
+<body>
+    <!-- Navigation -->
+    <!-- Dans la navigation principale -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2QTN79M" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-hourglass-half"></i>
+                <span>Focus Chronométré</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Fonctionnalités</a>
+                <a href="#how-it-works" class="nav-link">Comment ça marche</a>
+                <a href="#about" class="nav-link">À propos</a>
+            </div>
+
+            <!-- AJOUTER ICI : Bouton de thème -->
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-outline nav-cta" onclick="startApp()">
+                    <i class="fas fa-play"></i> Démarrer
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">Concentrez-vous.</span>
+                    <span class="highlight">Terminez.</span>
+                    <span class="highlight">Répétez.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    L'application Pomodoro minimaliste pour maximiser votre productivité.
+                    Travaillez avec focus, prenez des pauses intelligentes, accomplissez plus.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" onclick="startApp()">
+                        <i class="fas fa-bolt"></i> Commencer Maintenant
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="scrollToFeatures()">
+                        <i class="fas fa-info-circle"></i> En savoir plus
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span>+10,00 utilisateurs</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <span>2M+ minutes de focus</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.8/5 étoiles</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-preview">
+                <div class="app-preview">
+                    <div class="preview-screen">
+                        <div class="preview-timer">
+                            <div class="preview-circle"></div>
+                            <div class="preview-time">25:00</div>
+                            <div class="preview-mode">Focus</div>
+                        </div>
+                        <div class="preview-controls">
+                            <button class="preview-btn"><i class="fas fa-play"></i></button>
+                            <button class="preview-btn"><i class="fas fa-pause"></i></button>
+                            <button class="preview-btn"><i class="fas fa-redo"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" onclick="scrollToFeatures()">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir Focus Chronométré ?</h2>
+            <p class="section-subtitle">Tout ce dont vous avez besoin pour rester productif</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>Sans Distraction</h3>
+                    <p>Interface minimaliste conçue pour vous aider à rester concentré sur votre travail, sans éléments
+                        superflus.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Personnalisable</h3>
+                    <p>Adaptez les durées de travail et de pause selon vos besoins. Choisissez entre thème clair et
+                        sombre.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Suivi des Progrès</h3>
+                    <p>Visualisez vos sessions de travail et suivez votre productivité au fil du temps.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>100% Responsive</h3>
+                    <p>Utilisez l'application sur ordinateur, tablette ou smartphone sans perte de qualité.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Notifications Intelligentes</h3>
+                    <p>Recevez des alertes discrètes pour les transitions entre travail et pause.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Sauvegarde Automatique</h3>
+                    <p>Vos paramètres et statistiques sont sauvegardés automatiquement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Le fonctionnement du chrono -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">La Méthode Pomodoro</h2>
+            <p class="section-subtitle">Une technique de productivité éprouvée en 4 étapes simples</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Planifiez votre tâche</h3>
+                        <p>Choisissez une tâche à accomplir et définissez votre objectif.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Travaillez pendant 25 minutes</h3>
+                        <p>Lancez le chronomètre et concentrez-vous uniquement sur votre tâche.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Prenez une pause de 5 minutes</h3>
+                        <p>Levez-vous, étirez-vous, détendez-vous. Votre cerveau a besoin de repos.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Répétez le cycle</h3>
+                        <p>Après 4 cycles, prenez une pause plus longue de 15-30 minutes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pomodoro-explained">
+                <div class="explanation">
+                    <h3>Pourquoi ça marche ?</h3>
+                    <p>La technique Pomodoro divise votre temps en intervalles gérables, réduisant la procrastination et
+                        améliorant la concentration. En limitant les sessions de travail à 25 minutes, vous évitez la
+                        fatigue mentale tout en maintenant un rythme soutenu.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Réduit l'anxiété face aux grandes tâches</li>
+                        <li><i class="fas fa-check"></i> Augmente la concentration</li>
+                        <li><i class="fas fa-check"></i> Améliore la gestion du temps</li>
+                        <li><i class="fas fa-check"></i> Favorise l'équilibre travail/repos</li>
+                    </ul>
+                </div>
+                <div class="pomodoro-visual">
+                    <div class="visual-cycle">
+                        <div class="cycle-item focus">
+                            <span>25 min</span>
+                            <small>Travail</small>
+                        </div>
+                        <div class="cycle-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="cycle-item break">
+                            <span>5 min</span>
+                            <small>Pause</small>
+                        </div>
+                        <div class="cycle-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="cycle-item repeat">
+                            <span>×4</span>
+                            <small>Cycle</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à booster votre productivité ?</h2>
+                <p>Rejoignez des milliers de personnes qui utilisent déjà Focus Chronométré pour accomplir plus en moins
+                    de temps.</p>
+                <button class="btn btn-primary btn-xlarge" onclick="startApp()">
+                    <i class="fas fa-rocket"></i> Démarrer Gratuitement
+                </button>
+                <p class="cta-note">Aucune inscription requise • 100% gratuit • Fonctionne hors ligne</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">À propos</h2>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Notre Mission</h3>
+                    <p>Focus Chronométré a été créé pour aider les personnes à mieux gérer leur temps et à améliorer
+                        leur concentration dans un monde rempli de distractions.</p>
+                    <p>Nous croyons que la productivité n'est pas une question de travailler plus dur, mais de
+                        travailler plus intelligemment avec les bons outils.</p>
+
+                    <div class="creator-info">
+                        <div class="creator-avatar">
+                            <img src="assets/moi.png" alt="Votre Nom - Créateur de Focus Chronométré">
+                        </div>
+                        <div class="creator-details">
+                            <h4>Ibrahim Samake</h4>
+                            <p>Développeur & Créateur</p>
+                            <div class="creator-links">
+                                <a href="mailto:ibrahimsamf23@email.com">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://github.com/Espy-Tech" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/ibrahim-samake-18629038b/" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <h3>En quelques chiffres</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number" data-count="15">0</div>
+                            <div class="stat-label">Utilisateurs</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" data-count="200">0</div>
+                            <div class="stat-label">Minutes de focus</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" data-count="7">0</div>
+                            <div class="stat-label">% Satisfaction</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-label">Mises à jour</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-hourglass-half"></i>
+                        <span>Focus Chronométré</span>
+                    </div>
+                    <p>L'application de productivité minimaliste pour les personnes qui veulent accomplir plus.</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Application</h4>
+                        <a href="app.html">Utiliser l'application</a>
+                        <a href="#features">Fonctionnalités</a>
+                        <a href="#how-it-works">Méthode Pomodoro</a>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#" onclick="showContactModal()">Contact</a>
+                        <a href="#" onclick="showFaqModal()">FAQ</a>
+                        <a href="#" onclick="showFeedbackModal()">Feedback</a>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Légal</h4>
+                        <a href="#" onclick="showPrivacyModal()">Politique de confidentialité</a>
+                        <a href="#" onclick="showTermsModal()">Conditions d'utilisation</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Focus Chronométré. Tous droits réservés.</p>
+                <p class="footer-creator">
+                    <i class="fas fa-heart"></i> Créé avec passion par <strong>Samake Ibrahim</strong>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal (simplifié) -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content small-modal">
+            <h3>Contact</h3>
+            <p>Pour toute question ou suggestion :</p>
+            <p><strong>Email :</strong> ibrahimsamf23@gmail.com</p>
+            <button class="btn btn-secondary" onclick="closeModal('contactModal')">Fermer</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/homepage.js"></script>
+
+    <!-- Fonctions globales pour les boutons -->
+    <script>
+        function startApp() {
+            window.location.href = 'app.html';
+        }
+
+        function scrollToFeatures() {
+            document.getElementById('features').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function showContactModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Fermer modal en cliquant à l'extérieur
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+    <script>
+        // Anime les compteurs de la page (valeur définie dans l'attribut data-count)
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'), 10) || 0;
+                const duration = 1400; // durée de l'animation en ms
+                const startTime = performance.now();
+
+                function step(now) {
+                    const elapsed = now - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const value = Math.floor(progress * target);
+                    counter.textContent = value;
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        counter.textContent = target; // assurer la valeur finale exacte
+                    }
+                }
+
+                requestAnimationFrame(step);
+            });
+        });
+    </script>
+</body>
+
+</html>
