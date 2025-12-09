@@ -1,6 +1,8 @@
 # Focus Chronométré
 
 Une application web minimaliste et professionnelle pour la technique Pomodoro de gestion du temps.
+<img width="1718" height="851" alt="Screenshot 2025-12-06 221711" src="https://github.com/user-attachments/assets/4334dd6a-f8e7-470d-bdbb-9f942ca28d0e" />
+
 
 ## 📋 Fonctionnalités
 
